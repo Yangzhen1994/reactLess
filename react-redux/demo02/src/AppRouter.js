@@ -5,23 +5,41 @@
  */
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Index from "./pages/index";
+import Vedio from "./pages/vedio";
+import Workplace from "./pages/Workplace";
+import "./style/index.css";
 
-function Index() {
-    return <h2>JSPang.com</h2>;
-}
-
-function List() {
-    return <h2>List-Page</h2>;
-}
+let routeConfig =[
+    {path:'/',title:'博客首页',exact:true,component:Index},
+    {path:'/video/',title:'视频教程',exact:false,component:Vedio},
+    {path:'/workplace/',title:'职场技能',exact:false,component:Workplace}
+]
 const AppRouter = () =>{
     return (
         <Router>
-            <ul>
-                <li> <Link to="/">首页</Link> </li>
-                <li><Link to="/list/">列表</Link> </li>
-            </ul>
-            <Route path="/" exact component={Index} />
-            <Route path="/list/" component={List} />
+            <div className='mainDiv'>
+                <div className="leftNav">
+                    <h3>以及导航</h3>
+                    <ul>
+                        {
+                            routeConfig.map((item,index)=>{
+                                return (<li key={index}> <Link to={item.path}>{item.title}</Link> </li>)
+                            })
+                        }
+                    </ul>
+                </div>
+                <div className="rightMain">
+                    {
+                        routeConfig.map((item,index)=>{
+                            return (<Route key={index} exact={item.exact} path={item.path}  component={item.component} />)
+                        })
+                    }
+                   {/* <Route path='/'  component={Index}/>
+                    <Route path='/video/' component={Vedio}/>
+                    <Route path='/workplace/' component={Workplace}/>*/}
+                </div>
+            </div>
         </Router>
     )
 }

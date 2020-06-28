@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html5 postMessage</title>
+    <style>
+        #otherWin {
+            width: 600px;
+            height: 400px;
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">open</button>
+<button id="send">send</button>
+<!-- 通过 iframe 嵌入子页面(接收消息目标窗口) -->
+<iframe src="http://localhost:8088/react-redux/postMessage/win.html"
+        id="otherWin"></iframe>
+<br/><br/>
+<input type="text" id="message"><input type="button"
+                                       value="Send to child.com" id="sendMessage" />
+<script>
+    window.onload = function() {
+        var btn = document.getElementById('btn');
+        var btn_send = document.getElementById('send');
+        var sendBtn = document.getElementById('sendMessage');
+        function sendIt(e){
+            // 通过 postMessage 向子窗口发送数据
+            document.getElementById("otherWin").contentWindow
+                .postMessage(
+                    document.getElementById("message").value,
+                    "http://localhost:8088/");
+        }
+        sendBtn.onclick = function(e) {
+            sendIt(e);
+        };
+    };
+</script>
+</body>
+</html>
