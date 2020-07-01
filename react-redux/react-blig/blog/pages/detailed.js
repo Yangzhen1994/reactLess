@@ -70,7 +70,7 @@ const Detailed = () => {
                         <div className="bread-div">
                             <Breadcrumb>
                                 <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-                                <Breadcrumb.Item>视频列表</Breadcrumb.Item>
+                                <Breadcrumb.Item>视频列表1</Breadcrumb.Item>
                                 <Breadcrumb.Item>xxxxx</Breadcrumb.Item>
                             </Breadcrumb>
                         </div>
