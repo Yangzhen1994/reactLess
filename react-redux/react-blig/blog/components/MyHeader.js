@@ -5,7 +5,7 @@
  */
 import '../static/style/components/myHeader.css'
 import React from 'react';
-import { Row, Col, Menu, Icon } from 'antd'
+import { Row, Col, Menu } from 'antd'
 import {
     HomeOutlined,
     VideoCameraAddOutlined,
