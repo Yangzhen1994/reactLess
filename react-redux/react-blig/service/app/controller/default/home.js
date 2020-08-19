@@ -23,7 +23,7 @@ class HomeController extends Controller {
     let sql = 'SELECT article.id as id,'+
         'article.title as title,'+
         'article.introduce as introduce,'+
-        'article.articl_content as content,'+
+        'article.article_content as content,'+
         "FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s') as addTime,"+
         'article.view_count as viewCount,'+
         'type.typeName as typeName,'+
