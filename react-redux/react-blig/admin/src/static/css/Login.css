@@ -1,0 +1,18 @@
+html,body{
+    height: 100%;
+}
+.login-div{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 280px;
+}
+
+body{
+    background: url('../img/loginBg.jpg');
+    background-size: 100% 100%;
+}

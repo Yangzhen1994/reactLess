@@ -29,7 +29,7 @@ const MyHeader = () => {
 
     const handleClick = (e) =>{
         if(e.key == 0){
-            Router.push('/index')
+            Router.push('/')
         }else{
             Router.push(`/list?id=${e.key}`)
         }
